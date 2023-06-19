@@ -1,0 +1,25 @@
+body {
+  font-family: Arial, sans-serif;
+    background-color: lightgreen;
+  
+}
+
+h1 {
+  text-align: center;
+}
+
+#leaderInput {
+  display: block;
+  margin: 20px auto;
+  padding: 10px;
+  font-size: 16px;
+}
+
+#flagContainer {
+  width: 200px;
+  height: 150px;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
