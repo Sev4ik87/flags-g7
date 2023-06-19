@@ -1,9 +1,11 @@
 "use strict";
-window.addEventListener('DOMContentLoaded', function() {
+
+function handleCont() {
   var leaderInput = document.getElementById('leaderInput');
   var flagContainer = document.getElementById('flagContainer');
+  leaderInput.addEventListener('blur', handleInput);
 
-  leaderInput.addEventListener('change', function() {
+  function handleInput() {
     var leaderName = leaderInput.value.trim().toLowerCase();
     var flagURL = '';
 
@@ -38,5 +40,7 @@ window.addEventListener('DOMContentLoaded', function() {
     }
 
     flagContainer.style.backgroundImage = 'url(' + flagURL + ')';
-  });
-});
+  }
+}
+
+window.addEventListener('DOMContentLoaded', handleCont);
