@@ -40,21 +40,24 @@ function handleCont() {
     }
 
     fetch(flagURL)
-    .then(function(response) {
-      if (response.ok) {
-        return response.blob();
-      }
-      throw new Error('Network response was not OK.');
-    })
-    .then(function(flagBlob) {
-      var flagURLObject = URL.createObjectURL(flagBlob);
-      flagContainer.style.backgroundImage = 'url(' + flagURLObject + ')';
-    })
-    .catch(function(error) {
-      console.log('Error:', error);
-    });
+      .then(function(response) {
+        if (response.ok) {
+          return response.blob();
+        }
+        throw new Error('Network response was not OK.');
+      })
+      .then(function(flagBlob) {
+        let flagImage = document.createElement('img');
+        flagImage.src = URL.createObjectURL(flagBlob);
+        flagImage.alt = 'Flag';
+
+        flagContainer.replaceChildren(flagImage); 
+      })
+      .catch(function(error) {
+        console.log('Error:', error);
+      });
+  }
 }
-}  
 
 
 window.addEventListener('DOMContentLoaded', handleCont);
