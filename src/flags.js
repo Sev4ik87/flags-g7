@@ -39,8 +39,22 @@ function handleCont() {
         break;
     }
 
-    flagContainer.style.backgroundImage = 'url(' + flagURL + ')';
-  }
+    fetch(flagURL)
+    .then(function(response) {
+      if (response.ok) {
+        return response.blob();
+      }
+      throw new Error('Network response was not OK.');
+    })
+    .then(function(flagBlob) {
+      var flagURLObject = URL.createObjectURL(flagBlob);
+      flagContainer.style.backgroundImage = 'url(' + flagURLObject + ')';
+    })
+    .catch(function(error) {
+      console.log('Error:', error);
+    });
 }
+}  
+
 
 window.addEventListener('DOMContentLoaded', handleCont);

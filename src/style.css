@@ -9,10 +9,13 @@ h1 {
 }
 
 #leaderInput {
+  border: 1px solid;
   display: block;
   margin: 20px auto;
   padding: 10px;
   font-size: 16px;
+  border-radius: 15px;
+
 }
 
 #flagContainer {
