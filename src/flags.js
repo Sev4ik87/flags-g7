@@ -1,13 +1,13 @@
 "use strict";
 
 function handleCont() {
-  var leaderInput = document.getElementById('leaderInput');
-  var flagContainer = document.getElementById('flagContainer');
-  leaderInput.addEventListener('blur', handleInput);
+  let leaderInput = document.getElementById('leaderInput');
+  let flagContainer = document.getElementById('flagContainer');
+  leaderInput.addEventListener('change', handleInput);
 
   function handleInput() {
-    var leaderName = leaderInput.value.trim().toLowerCase();
-    var flagURL = '';
+    let leaderName = leaderInput.value.trim().toLowerCase();
+    let flagURL = '';
 
     switch (leaderName) {
       case 'biden':
@@ -36,7 +36,6 @@ function handleCont() {
         break;
       default:
         flagURL = 'assets/imgs/flags/eu.png';
-        break;
     }
 
     fetch(flagURL)
